@@ -38,14 +38,7 @@ export const renderTask = (tasks) =>{
 
     });
 
-    // const editBtns = document.querySelectorAll(".edit");
-
-    // editBtns.forEach(btn=>{
-    //     btn.addEventListener("click",()=>{
-    //         editTask(Number(btn.dataset.id));
-    //     })
-    // })
-
+    
     taskCon.addEventListener("click",(e)=>{
         const id = Number(e.target.dataset.id);
         if(!id && id !== 0){
@@ -57,14 +50,14 @@ export const renderTask = (tasks) =>{
        else if (e.target.classList.contains("remove")) {
     const index = GlobalTasks.findIndex(t => t.id == id);
     if (index !== -1) {
-        // also remove from project.tasks
+        
         const task = GlobalTasks[index];
         const project = projectArray.find(p => p.name === task.projectname);
         if (project) {
             project.tasks = project.tasks.filter(t => t.id !== id);
         }
 
-        // remove from global
+        
         GlobalTasks.splice(index, 1);
 
         renderTask(GlobalTasks);
@@ -78,7 +71,7 @@ export const renderTask = (tasks) =>{
 
 export function renderProjects(projectArray) {
   const side = document.querySelector(".side");
-  // remove old project buttons
+  
   side.querySelectorAll(".project-btn").forEach(btn => btn.remove());
 
   projectArray.forEach(project => {
