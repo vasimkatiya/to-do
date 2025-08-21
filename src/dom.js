@@ -24,7 +24,6 @@ export const init = () => {
 
 
     const addTaskBtn = document.querySelector('.taskBtn');
-    // const editProBtn = document.querySelector('.edit-project');
     const allTaskBtn = document.querySelector(".all-task")
 
 renderProjects(projectArray)
